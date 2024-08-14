@@ -5,6 +5,7 @@ import HeaderComponent from './components/HeaderComponent.jsx'
 import FooterComponent from './components/FooterComponent.jsx'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import EmployeeComponent from './components/EmployeeComponent.jsx'
+import DeleteEmployeeComponent from './components/DeleteEmployeeComponent.jsx'
 
 function App() {
 
@@ -21,6 +22,8 @@ function App() {
             <Route path='/add-Employee' element = {<EmployeeComponent></EmployeeComponent>}></Route>
             {/* // http://localhost:3000/editEmployee/1*/}
             <Route path='/edit-employee/:id' element = {<EmployeeComponent></EmployeeComponent>}></Route>
+            {/* //http://localhost:3000/deleteEmployee/1*/}
+            <Route path='/delete-employee/:id' element = {<DeleteEmployeeComponent></DeleteEmployeeComponent>}></Route>
           </Routes>
         <FooterComponent></FooterComponent>
       </BrowserRouter>

@@ -19,3 +19,9 @@ export const updateEmployee = (e, id) =>
     return axios.put(updateApi,e)
 }
 
+export const deleteEmployee = (id) =>
+{
+    var deleteApi = REST_API_BASE_URL + "/delete/" + id
+    return axios.delete(deleteApi)
+}
+

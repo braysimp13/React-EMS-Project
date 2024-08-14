@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { listEmployees } from '../services/EmployeeService'
+import { listEmployees, deleteEmployee } from '../services/EmployeeService'
 import { useNavigate } from 'react-router-dom'
 
 const ListEmployeeComponent = () =>{
@@ -18,9 +18,9 @@ const ListEmployeeComponent = () =>{
     navigator('/add-employee')
  }
 
- function deleteEmployee()
+ function employeeDelete(id)
  {
-
+    navigator(`/delete-employee/${id}`)
  }
 
  function updateEmployee(id)
@@ -51,7 +51,7 @@ const ListEmployeeComponent = () =>{
                                 <td>{employee.firstName}</td>
                                 <td>{employee.lastName}</td>
                                 <td>{employee.email}</td>
-                                <td><button type="button" className="btn btn-info" onClick={() => updateEmployee(employee.id)}>Update</button> <button type="button" className="btn btn-info" onClick={deleteEmployee}>Delete</button></td>
+                                <td><button type="button" className="btn btn-info" onClick={() => updateEmployee(employee.id)}>Update</button> <button type="button" className="btn btn-info" onClick={() => employeeDelete(employee.id)}>Delete</button></td>
                             </tr>
                         )
                     }
